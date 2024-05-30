@@ -28,10 +28,16 @@ Simple Groq & Llama3 project to demonstrate using Python, Llama3 and Groq Cloud 
 
 `pip install -r requirements.txt`
 
-### Run Hello Groq
+### Run Basic Call
 basic_call.py is a file to test that the connect with the groq api and Llama3 works.\
 
 __Run__: `python basic_call.py`
 
+### Run Chatbot
+`streamlit run chatbot.py`
 
+### Bonus Features
+- Streamlit for a visual experience
+- A memory of the last 10 conversations
+- Sarcasm
 

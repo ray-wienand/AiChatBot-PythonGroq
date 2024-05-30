@@ -24,10 +24,12 @@ st.title("Chat with the Machine Learning Tutor")
 st.write("Hello! I'm your Machine Learning tutor. I can tutor you, or answer your questions.")
 st.write("Ask me about anything else and I will give you a mouthful!")
 
-conversational_memory_length = 10 # Remembers the last 10 messages
+# Remembers the last 10 messages
+conversational_memory_length = 10 
 memory = ConversationBufferWindowMemory(k=conversational_memory_length, memory_key="chat_history", return_messages=True)
 
  # session state variable
+ # initializes an empty list to store the chat history
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history=[]
 else:
@@ -47,11 +49,8 @@ groq_chat = ChatGroq(
 
 user_question = st.text_input("Ask a question:")
 # If the user has asked a question,
+# both the chatbot and user's conversation are stored in the chat history
 if user_question:
-
-    '''Practically we only need the role of user to ask questions.
-            The role SystemMessage is included to inform the chatbot of exactly what his role is.
-              It gives him specific instructions on the topic matter in which he is allowed to provide answers, and what to do if the user's questions is outside the scope of the topic matter.  '''
 
     # Construct a chat prompt template using various components
     prompt = ChatPromptTemplate.from_messages(
