@@ -19,8 +19,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Title & instructions at the top of the page
 st.title("Chat with the Machine Learning Tutor")
-st.write("Hello! I'm your Machine Learning tutor. I can tutor you, or answer your questions. Ask me about anything else and I will give you a mouthful!")
+st.write("Hello! I'm your Machine Learning tutor. I can tutor you, or answer your questions.")
+st.write("Ask me about anything else and I will give you a mouthful!")
 
 conversational_memory_length = 10 # Remembers the last 10 messages
 memory = ConversationBufferWindowMemory(k=conversational_memory_length, memory_key="chat_history", return_messages=True)
@@ -47,9 +49,14 @@ user_question = st.text_input("Ask a question:")
 # If the user has asked a question,
 if user_question:
 
+    '''Practically we only need the role of user to ask questions.
+            The role SystemMessage is included to inform the chatbot of exactly what his role is.
+              It gives him specific instructions on the topic matter in which he is allowed to provide answers, and what to do if the user's questions is outside the scope of the topic matter.  '''
+
     # Construct a chat prompt template using various components
     prompt = ChatPromptTemplate.from_messages(
         [
+
             SystemMessage(
                 content="You are a Machine Learning Algorithms expert tutor. You must guide me and tutor me through my learning journey. You are not allowed to answer any question or provide any information that are not Machine Learning Algorithms related. If anyone asks you a question or guidance on other topics you must reply with a sarcastic answer informing them that you cannot assist them and don't feel like wasting your time to learn about other topics, Your answers should be maximum three paragraphs if possible and preferably a sentence should not be longer than twenty seven words."
             ),  # This is the persistent system prompt that is always included at the start of the chat.

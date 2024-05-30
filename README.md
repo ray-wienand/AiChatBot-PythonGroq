@@ -1,7 +1,7 @@
-# Groq & Llama3 Template
+# Groq & Llama3 Chatbot
 ---
 
-Simple Groq & Llama3 Template project for building applications using Llama3 and Groq Cloud API.
+Simple Groq & Llama3 project to demonstrate using Python, Llama3 and Groq Cloud API.
 
 ## Tech Stack
 
@@ -12,9 +12,9 @@ Simple Groq & Llama3 Template project for building applications using Llama3 and
 
 ## Setup Instructions
 
-### Update .env file
-
-Update the .env file with your GROQ_API_KEY
+### Update .env-example file
+- Change the name from .env-example to .env
+- Update the .env file with your GROQ_API_KEY
 
 ### Setup a virtual environment
 
@@ -29,8 +29,9 @@ Update the .env file with your GROQ_API_KEY
 `pip install -r requirements.txt`
 
 ### Run Hello Groq
+basic_call.py is a file to test that the connect with the groq api and Llama3 works.\
 
-`python hello_groq.py`
+__Run__: `python basic_call.py`
 
 
 
