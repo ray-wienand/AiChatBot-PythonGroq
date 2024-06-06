@@ -21,7 +21,7 @@ load_dotenv()
 
 # Title & instructions at the top of the page
 st.title("Chat with the Machine Learning Tutor")
-st.write("Hello! I'm your Machine Learning tutor. I can tutor you, or answer your questions.")
+st.write("Hello! I'm your Machine Learning tutor. I can tutor you, or answer your questions about AI and ML.")
 st.write("Ask me about anything else and I will give you a mouthful!")
 
 # Remembers the last 10 messages
