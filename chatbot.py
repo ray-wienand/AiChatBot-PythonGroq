@@ -39,11 +39,10 @@ else:
             {'output':message['AI']}
             )
 
-
 # Initialize Groq Langchain chat object and conversation
 groq_chat = ChatGroq(
-        groq_api_key=os.environ.get("GROQ_API_KEY"),   
-        model_name="llama3-8b-8192",
+    groq_api_key=os.environ.get("GROQ_API_KEY"),   
+    model_name="llama3-8b-8192",
 )
 
 
